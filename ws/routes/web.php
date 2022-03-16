@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DbController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,13 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/db', function () {
-    return view('db.index');
-});
-
 /*
 Route::get('/home', function () {
     return view('home.index');
 }); */
 
 Route::get( '/home', [HomeController::class, 'index'])->name('home.index');
+
+Route::get('/db', [DbController::class, 'index'])->name('db.index');

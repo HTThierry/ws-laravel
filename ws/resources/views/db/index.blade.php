@@ -7,12 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-        if(DB::connection()->getPdo())
-        {
-            echo "Successfully connected to the database => "
-                         .DB::connection()->getDatabaseName();
-        }
-    ?>
+    <p>{{$user->firstname}}</p>
 </body>
 </html>
